@@ -7,6 +7,7 @@ import MySidebar from './scenes/global/Sidebar';
 import Topbar from './scenes/global/Topbar';
 import Calendar from './scenes/calendar/calendar';
 import Dashboard from './scenes/dashboard';
+import Contacts from './scenes/contacts';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -24,6 +25,7 @@ function App() {
               <Route path="/bar" element={<Bar />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/" element={<Dashboard />} />
+              <Route path="/contacts" element={<Contacts />} />
             </Routes>
           </main>
         </div>
