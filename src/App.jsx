@@ -11,6 +11,7 @@ import Contacts from './scenes/contacts';
 import FAQ from './scenes/faq';
 import Form from './scenes/form';
 import Geography from './scenes/geography';
+import Invoices from './scenes/invoices';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -32,6 +33,7 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/form" element={<Form />} />
               <Route path="/geography" element={<Geography />} />
+              <Route path="/invoices" element={<Invoices />} />
             </Routes>
           </main>
         </div>
