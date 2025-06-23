@@ -5,6 +5,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import { ColorModeContext, useMode } from './theme';
 import MySidebar from './scenes/global/Sidebar';
 import Topbar from './scenes/global/Topbar';
+import Calendar from './scenes/calendar/calendar';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -20,6 +21,7 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/bar" element={<Bar />} />
+              <Route path="/calendar" element={<Calendar />} />
             </Routes>
           </main>
         </div>
