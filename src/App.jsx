@@ -9,6 +9,7 @@ import Calendar from './scenes/calendar/calendar';
 import Dashboard from './scenes/dashboard';
 import Contacts from './scenes/contacts';
 import FAQ from './scenes/faq';
+import Form from './scenes/form';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -28,6 +29,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/form" element={<Form />} />
             </Routes>
           </main>
         </div>
