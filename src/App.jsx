@@ -14,6 +14,7 @@ import Geography from './scenes/geography';
 import Invoices from './scenes/invoices';
 import Line from './scenes/line';
 import Pie from './scenes/pie';
+import Team from './scenes/team';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -38,6 +39,7 @@ function App() {
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/line" element={<Line />} />
               <Route path="/pie" element={<Pie />} />
+              <Route path="/team" element={<Team />} />
             </Routes>
           </main>
         </div>
