@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Bar from "./scenes/bar";
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { ColorModeContext, useMode } from './theme';
+import MySidebar from './scenes/global/Sidebar';
+import Topbar from './scenes/global/Topbar';
+import Calendar from './scenes/calendar/calendar';
+import Dashboard from './scenes/dashboard';
+import Contacts from './scenes/contacts';
+import FAQ from './scenes/faq';
+import Form from './scenes/form';
+import Geography from './scenes/geography';
+import Invoices from './scenes/invoices';
+import Line from './scenes/line';
+import Pie from './scenes/pie';
+import Team from './scenes/team';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, colorMode] = useMode();
+  const [isSideBar, setIsSidebar] = useState(true);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="app">
+          <MySidebar isSidebar={isSideBar} />
+          <main className="content">
+            <Topbar setIsSidebar={setIsSidebar} />
+            <Routes>
+              <Route path="/bar" element={<Bar />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="/geography" element={<Geography />} />
+              <Route path="/invoices" element={<Invoices />} />
+              <Route path="/line" element={<Line />} />
+              <Route path="/pie" element={<Pie />} />
+              <Route path="/team" element={<Team />} />
+            </Routes>
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  );
+};
 
-export default App
+export default App;
